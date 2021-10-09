@@ -21,6 +21,11 @@ public class VoteCount {
     private int redVotes;
     private int greenVotes;
 
+    public VoteCount(int redVotes, int greenVotes){
+        this.greenVotes = greenVotes;
+        this.redVotes = redVotes;
+    }
+
     @ManyToOne
     private Poll poll;
 

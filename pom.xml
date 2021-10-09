@@ -10,14 +10,21 @@
 	</parent>
 	<groupId>no.hvl.dat250.gruppe5</groupId>
 	<artifactId>voteapp</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>voteapp</name>
-	<description>Demo project for Spring Boot</description>
+	<description>REST Api for group 5 voteapp</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
 
 	<dependencies>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.22</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springdoc</groupId>
 			<artifactId>springdoc-openapi-ui</artifactId>

@@ -1,21 +1,8 @@
 package no.hvl.dat250.gruppe5.voteapp.loader;
 
 
-import no.hvl.dat250.gruppe5.voteapp.models.Poll;
-import no.hvl.dat250.gruppe5.voteapp.models.PollTemplate;
-import no.hvl.dat250.gruppe5.voteapp.models.VoterProfile;
-import no.hvl.dat250.gruppe5.voteapp.repository.PollRepository;
-import no.hvl.dat250.gruppe5.voteapp.repository.PollTemplateRepository;
-import no.hvl.dat250.gruppe5.voteapp.repository.VoterProfileRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
-
-import java.sql.Time;
-import java.time.LocalTime;
-
 //Small Databaseloader that loads the database with some examples
-
+/*
 
 @Component
 public class DataBaseLoader implements CommandLineRunner {
@@ -48,3 +35,4 @@ public class DataBaseLoader implements CommandLineRunner {
 
     }
 }
+*/

@@ -6,6 +6,11 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIdentityReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -14,6 +19,7 @@ import java.util.Objects;
 @ToString
 @RequiredArgsConstructor
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class PollTemplate {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -37,6 +43,7 @@ public class PollTemplate {
 
     @OneToMany
     @ToString.Exclude
+    @JsonIdentityReference(alwaysAsId = true)
     private List<Poll> polls;
 
     @Override

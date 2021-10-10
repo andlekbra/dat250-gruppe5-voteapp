@@ -40,11 +40,9 @@ public class VoterProfileController {
     }
 
     @PutMapping(path = "{voterId}")
-    public void updateVoter(@PathVariable("voterId") Long voterId,
-                            @RequestParam(required = false) String username,
-                            @RequestParam(required = false) String email,
-                            @RequestParam(required = false) String firstName,
-                            @RequestParam(required = false) String lastName) {
+    public void updateVoter(@PathVariable("voterId") Long voterId, @RequestParam(required = false) String username,
+            @RequestParam(required = false) String email, @RequestParam(required = false) String firstName,
+            @RequestParam(required = false) String lastName) {
         voterService.updateVoter(voterId, username, email, firstName, lastName);
     }
 }

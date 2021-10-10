@@ -1,6 +1,5 @@
 package no.hvl.dat250.gruppe5.voteapp.loader;
 
-
 import no.hvl.dat250.gruppe5.voteapp.models.Poll;
 import no.hvl.dat250.gruppe5.voteapp.models.PollTemplate;
 import no.hvl.dat250.gruppe5.voteapp.models.VoterProfile;
@@ -15,7 +14,6 @@ import java.sql.Time;
 import java.time.LocalTime;
 
 //Small Databaseloader that loads the database with some examples
-
 
 @Component
 public class DataBaseLoader implements CommandLineRunner {
@@ -35,7 +33,7 @@ public class DataBaseLoader implements CommandLineRunner {
 
         @Override
         public void run(String... args) throws Exception {
-                if (true) {
+                if (false) {
                         this.repository.save(new VoterProfile("test1", "test1@test_one.com", "T", "est1",
                                         "qwerty_mcsmarty_pants1"));
                         this.repository.save(new VoterProfile("test2", "test2@test_two.com", "T", "est2",
@@ -71,4 +69,3 @@ public class DataBaseLoader implements CommandLineRunner {
                 }
         }
 }
-*/

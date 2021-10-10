@@ -1,12 +1,14 @@
 package no.hvl.dat250.gruppe5.voteapp.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import no.hvl.dat250.gruppe5.voteapp.models.Poll;
 import no.hvl.dat250.gruppe5.voteapp.repository.PollRepository;
 
 import java.util.Optional;
 
+@Service
 public class PollServices {
 
     private final PollRepository pollRepository;

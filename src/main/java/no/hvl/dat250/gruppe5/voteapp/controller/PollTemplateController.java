@@ -43,7 +43,7 @@ public class PollTemplateController {
     }
 
     @DeleteMapping
-    public HttpStatus deletePollTemplateById(@RequestParam("pollTempId")@PathVariable Long pollTempId){
+    public HttpStatus deletePollTemplateById(@RequestParam("pollTempId") Long pollTempId){
         pollTemplateService.deletePollTemplate(pollTempId);
         return HttpStatus.OK;
     }

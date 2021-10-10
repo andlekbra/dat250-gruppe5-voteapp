@@ -35,8 +35,8 @@ public class Poll {
     @ManyToOne
     private PollTemplate pollTemplate;
 
-    @OneToOne
     @ToString.Exclude
+    @OneToOne(cascade = { CascadeType.ALL })
     private VoteCount voteCounts = new VoteCount();
 
     @ManyToMany

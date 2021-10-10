@@ -19,7 +19,7 @@ public class PollTemplateController {
         this.pollTemplateService = pollTemplateService;
     }
 
-    @GetMapping
+    @GetMapping(path = "/all")
     public Iterable<PollTemplate> getAllPollTemplates()
         {
             return pollTemplateService.getAllTemplates();
@@ -36,7 +36,7 @@ public class PollTemplateController {
     }
     */
 
-    @PostMapping
+    @PostMapping(path = "/create" )
     public HttpStatus createPollTemplate(@RequestBody PollTemplate pollTemplate){
         pollTemplateService.addNewPollTemplate(pollTemplate);
         return HttpStatus.OK;

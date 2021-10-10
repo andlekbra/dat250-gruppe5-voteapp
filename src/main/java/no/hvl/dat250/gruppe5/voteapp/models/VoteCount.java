@@ -21,13 +21,15 @@ public class VoteCount {
     private int redVotes;
     private int greenVotes;
 
-    public VoteCount(int redVotes, int greenVotes){
+    public VoteCount(int redVotes, int greenVotes) {
         this.greenVotes = greenVotes;
         this.redVotes = redVotes;
     }
 
-    @OneToOne
-    private Poll poll;
+    public void addVotes(VoteCount newVotes) {
+        this.greenVotes += newVotes.getGreenVotes();
+        this.redVotes += newVotes.getRedVotes();
+    }
 
     @Override
     public boolean equals(Object o) {

@@ -21,15 +21,15 @@ public class VoterProfile {
     @GeneratedValue(strategy = GenerationType.AUTO)
 
     private long id;
-    private String userName;
+    private String username;
     private String email;
     private String firstName;
     private String lastName;
     private String password;
 
-    public VoterProfile(String userName, String email, String firstName, String lastName, String password){
+    public VoterProfile(String username, String email, String firstName, String lastName, String password){
 
-        this.userName = userName;
+        this.username = username;
         this.email = email;
         this.firstName = firstName;
         this.lastName = lastName;

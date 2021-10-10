@@ -35,9 +35,9 @@ public class Poll {
     @ManyToOne
     private PollTemplate pollTemplate;
 
-    @OneToMany
+    @OneToOne
     @ToString.Exclude
-    private List<VoteCount> voteCounts;
+    private VoteCount voteCounts;
 
     @ManyToMany
     @ToString.Exclude

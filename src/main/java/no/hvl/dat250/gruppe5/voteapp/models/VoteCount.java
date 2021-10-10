@@ -26,7 +26,7 @@ public class VoteCount {
         this.redVotes = redVotes;
     }
 
-    @ManyToOne
+    @OneToOne
     private Poll poll;
 
     @Override

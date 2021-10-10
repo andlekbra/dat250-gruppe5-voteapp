@@ -23,6 +23,15 @@ public class PollTemplate {
     private String redAnswer;
     private String greenAnswer;
 
+    public PollTemplate(String title, String question, String redAnswer, String greenAnswer) {
+
+        this.title = title;
+        this.question = question;
+        this.redAnswer = redAnswer;
+        this.greenAnswer = greenAnswer;
+
+    }
+
     @ManyToOne
     private VoterProfile voter;
 

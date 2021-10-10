@@ -1,11 +1,12 @@
 package no.hvl.dat250.gruppe5.voteapp.models;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 import org.hibernate.Hibernate;
 
 import javax.persistence.*;
-//import java.util.HashSet;
-//import java.util.Hashtable;
 import java.util.Objects;
 import java.util.Set;
 
@@ -25,6 +26,16 @@ public class VoterProfile {
     private String firstName;
     private String lastName;
     private String password;
+
+    public VoterProfile(String userName, String email, String firstName, String lastName, String password){
+
+        this.userName = userName;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+
+    }
 
     @OneToMany
     @ToString.Exclude

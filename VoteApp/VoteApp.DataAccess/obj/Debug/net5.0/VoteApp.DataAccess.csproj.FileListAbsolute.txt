@@ -1,0 +1,15 @@
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\bin\Debug\net5.0\VoteApp.DataAccess.deps.json
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\bin\Debug\net5.0\VoteApp.DataAccess.runtimeconfig.json
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\bin\Debug\net5.0\VoteApp.DataAccess.runtimeconfig.dev.json
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\bin\Debug\net5.0\VoteApp.DataAccess.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\bin\Debug\net5.0\ref\VoteApp.DataAccess.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\bin\Debug\net5.0\VoteApp.DataAccess.pdb
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.AssemblyInfoInputs.cache
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.AssemblyInfo.cs
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.csproj.CoreCompileInputs.cache
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\ref\VoteApp.DataAccess.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.pdb
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.genruntimeconfig.cache
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp.DataAccess\obj\Debug\net5.0\VoteApp.DataAccess.csproj.AssemblyReference.cache

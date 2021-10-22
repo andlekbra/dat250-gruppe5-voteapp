@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/" Path="C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp\Client\bin\Debug\net5.0\wwwroot\" />
+  <ContentRoot BasePath="/" Path="C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\VoteApp\Client\obj\Debug\net5.0\scopedcss\bundle\" />
+</StaticWebAssets>

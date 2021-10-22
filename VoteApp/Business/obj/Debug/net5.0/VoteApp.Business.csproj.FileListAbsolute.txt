@@ -1,0 +1,17 @@
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.csproj.AssemblyReference.cache
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.AssemblyInfoInputs.cache
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.AssemblyInfo.cs
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.Business.deps.json
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.Business.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\ref\VoteApp.Business.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.Business.pdb
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.DataAccess.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.Shared.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.DataAccess.pdb
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\bin\Debug\net5.0\VoteApp.Shared.pdb
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.csproj.CopyComplete
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\ref\VoteApp.Business.dll
+C:\Users\ALB\source\repos\dat250-gruppe5-voteapp\VoteApp\Business\obj\Debug\net5.0\VoteApp.Business.pdb

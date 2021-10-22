@@ -10,8 +10,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\VoteApp.DataAccess\VoteApp.DataAccess.csproj" />
-    <ProjectReference Include="..\VoteApp\Shared\VoteApp.Shared.csproj" />
+    <ProjectReference Include="..\DataAccess\VoteApp.DataAccess.csproj" />
+    <ProjectReference Include="..\Shared\VoteApp.Shared.csproj" />
   </ItemGroup>
 
 </Project>

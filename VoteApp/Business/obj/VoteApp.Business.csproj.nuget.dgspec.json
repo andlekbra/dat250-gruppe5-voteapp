@@ -32,11 +32,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp.DataAccess\\VoteApp.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp.DataAccess\\VoteApp.DataAccess.csproj"
+              "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\DataAccess\\VoteApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\DataAccess\\VoteApp.DataAccess.csproj"
               },
-              "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp\\Shared\\VoteApp.Shared.csproj": {
-                "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp\\Shared\\VoteApp.Shared.csproj"
+              "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\Shared\\VoteApp.Shared.csproj": {
+                "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\Shared\\VoteApp.Shared.csproj"
               }
             }
           }
@@ -79,14 +79,14 @@
         }
       }
     },
-    "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp.DataAccess\\VoteApp.DataAccess.csproj": {
+    "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\DataAccess\\VoteApp.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp.DataAccess\\VoteApp.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\DataAccess\\VoteApp.DataAccess.csproj",
         "projectName": "VoteApp.DataAccess",
-        "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp.DataAccess\\VoteApp.DataAccess.csproj",
+        "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\DataAccess\\VoteApp.DataAccess.csproj",
         "packagesPath": "C:\\Users\\ALB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -149,14 +149,14 @@
         }
       }
     },
-    "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp\\Shared\\VoteApp.Shared.csproj": {
+    "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\Shared\\VoteApp.Shared.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp\\Shared\\VoteApp.Shared.csproj",
+        "projectUniqueName": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\Shared\\VoteApp.Shared.csproj",
         "projectName": "VoteApp.Shared",
-        "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp\\Shared\\VoteApp.Shared.csproj",
+        "projectPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\Shared\\VoteApp.Shared.csproj",
         "packagesPath": "C:\\Users\\ALB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\VoteApp\\Shared\\obj\\",
+        "outputPath": "C:\\Users\\ALB\\source\\repos\\dat250-gruppe5-voteapp\\VoteApp\\Shared\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

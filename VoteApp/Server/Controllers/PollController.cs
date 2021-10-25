@@ -84,7 +84,7 @@ namespace VoteApp.Server.Controllers
 				{
 					_PHthis = "failed", //_PHthis because "this" is reserved and doesn't seem hide-able in this context
 					with = ex.GetBaseException().GetType().ToString(),
-					because = $"Likely could not find PollTemplate with id:[{updatedPoll.PollTemplateId}] or poll does not exist"
+					because = $"Likely could not find PollTemplate with id:[{updatedPoll.PollTemplateId}] or poll with id:{updatedPoll.Id} does not exist"
 				}).Replace("_PHthis", "this");
 
 

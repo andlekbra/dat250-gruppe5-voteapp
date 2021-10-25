@@ -15,5 +15,8 @@ namespace VoteApp.Business.Repository
 
         public Task<Poll> GetPoll(int id);
         public Task<IEnumerable<Poll>> GetAllPolls();
+
+        public Task<Poll> DeletePoll(int id);
+        public Task<Poll> UpdatePoll(Poll poll);
     }
 }

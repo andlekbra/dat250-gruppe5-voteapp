@@ -28,6 +28,21 @@ namespace VoteApp.Business.Repository
 			return addedPoll.Entity;
 		}
 
+		public async Task<Poll> DeletePoll(int pollid)
+		{
+			try
+			{
+				Poll poll = await _db.Polls.FirstOrDefaultAsync(x => x.Id == pollid);
+				_db.Remove(poll);
+				await _db.SaveChangesAsync();
+				return poll;
+			}
+			catch (Exception ex)
+			{
+				throw ex;
+			}
+		}
+
 		public async Task<IEnumerable<Poll>> GetAllPolls()
 		{
 			try
@@ -54,6 +69,14 @@ namespace VoteApp.Business.Repository
 
 				throw ex;
 			}
+		}
+
+		public async Task<Poll> UpdatePoll(Poll poll)
+		{
+
+			_db.Entry(poll).State = EntityState.Modified;
+			await _db.SaveChangesAsync();
+			return poll;
 		}
 	}
 }

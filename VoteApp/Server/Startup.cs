@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.ResponseCompression;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -10,6 +11,8 @@ using System;
 using System.Linq;
 using VoteApp.Business.Repository;
 using VoteApp.DataAccess;
+using VoteApp.DataAccess.Entities;
+using VoteApp.Server.Service;
 
 namespace VoteApp.Server
 {
@@ -28,17 +31,25 @@ namespace VoteApp.Server
         {
             services.AddDbContext<VoteAppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-            services.AddScoped<IPollTemplateRepository, PollTemplateRepository>();
             services.AddSwaggerGen();
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<VoteAppDbContext>().AddDefaultTokenProviders();
 
+            services.AddAuthentication().AddGoogle(options =>
+                    {
+                        IConfigurationSection googleAuthNSection = Configuration.GetSection("Authentication:Google");
+                        options.ClientId = googleAuthNSection["ClientId"];
+                        options.ClientSecret = googleAuthNSection["ClientSecret"];
+                    });
 
+            services.AddScoped<IPollTemplateRepository, PollTemplateRepository>();
+            services.AddScoped<IDbInitializer, DbInitializer>();
 
             services.AddControllersWithViews();
             services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IDbInitializer dbInitializer)
         {
             if (env.IsDevelopment())
             {
@@ -58,23 +69,17 @@ namespace VoteApp.Server
             // Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.)
             app.UseSwaggerUI();
 
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
-
-            app.UseRouting();
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllers();
-            });
 
             app.UseHttpsRedirection();
             app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
+
+            dbInitializer.Initialize();
 
             app.UseEndpoints(endpoints =>
             {

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ using VoteApp.DataAccess.Entities;
 
 namespace VoteApp.DataAccess
 {
-    public class VoteAppDbContext : DbContext
+    public class VoteAppDbContext : IdentityDbContext<ApplicationUser>
     {
         public VoteAppDbContext(DbContextOptions<VoteAppDbContext> options) : base(options)
         { }

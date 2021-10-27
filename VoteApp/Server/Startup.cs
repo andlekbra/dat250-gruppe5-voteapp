@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -8,7 +9,9 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using VoteApp.Business.Repository;
 using VoteApp.DataAccess;
@@ -40,11 +43,24 @@ namespace VoteApp.Server
 
             services.AddAuthentication().AddIdentityServerJwt();
 
+
+            //Defaults to require authorization. To change policy endpoints must be annotated with [AllowAnonymous] or other policy [Authorize(PolicyName="MyPolicy")]
+            //services.AddAuthorization(options =>
+            //{
+            //    options.FallbackPolicy = new AuthorizationPolicyBuilder()
+            //        .RequireAuthenticatedUser()
+            //        .Build();
+            //});
+
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-  
+
             services.AddControllersWithViews();
             services.AddRazorPages();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(options =>
+            {
+            });
+
+
             services.AddScoped<IPollTemplateRepository, PollTemplateRepository>();
             services.AddScoped<IDbInitializer, DbInitializer>();
         }

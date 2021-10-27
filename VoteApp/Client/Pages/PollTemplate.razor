@@ -1,0 +1,77 @@
+﻿@page "/polltemplate"
+@using VoteApp.Shared.Models;
+@inject HttpClient httpClient;
+
+<h4>Create poll template</h4>
+<p>Area for creating poll templates</p>
+<EditForm Model="@pollTemplateDTO" OnValidSubmit="onValidSubmit">
+    <p>
+        <label>
+            Title:
+            <br />
+            <InputText @bind-Value="@pollTemplateDTO.Title" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Question:
+            <br />
+            <InputTextArea @bind-Value="@pollTemplateDTO.Question" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Red answer:
+            <br />
+            <InputTextArea @bind-Value="@pollTemplateDTO.RedAnswer" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Green answer:
+            <br />
+            <InputTextArea @bind-Value="@pollTemplateDTO.GreenAnswer" />
+        </label>
+    </p>
+    <p>
+        <button type="submit">Submit</button>
+    </p>
+
+</EditForm>
+<br />
+<br />
+<p>@pollTemplateResult?.ToString();</p>
+
+<h4>List all poll templates</h4>
+<p>Area for createing poll templates</p>
+<br />
+<button type="submit" @onclick="@updateList">Update</button>
+<br />
+@if (pollTemplateDTOs != null)
+{
+<table>
+    @foreach (var item in pollTemplateDTOs)
+    {
+    <tr>@item.Title;</tr>
+    }
+</table>
+}
+
+
+
+@code {
+    PollTemplateDTO pollTemplateDTO = new PollTemplateDTO();
+    HttpResponseMessage pollTemplateResult;
+    List<PollTemplateDTO> pollTemplateDTOs;
+
+    private async void onValidSubmit()
+    {
+        pollTemplateResult = await httpClient.PostAsJsonAsync<PollTemplateDTO>("api/polltemplate", pollTemplateDTO);
+    }
+
+    private async void updateList()
+    {
+        pollTemplateDTOs = await httpClient.GetFromJsonAsync<List<PollTemplateDTO>>("api/polltemplate");
+        StateHasChanged();
+    }
+}

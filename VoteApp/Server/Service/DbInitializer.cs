@@ -12,11 +12,11 @@ namespace VoteApp.Server.Service
 {
     public class DbInitializer : IDbInitializer
     {
-        private readonly VoteAppDbContext _db;
+        private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public DbInitializer(VoteAppDbContext db, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
+        public DbInitializer(ApplicationDbContext db, UserManager<ApplicationUser> userManager, RoleManager<IdentityRole> roleManager)
         {
             _db = db;
             _userManager = userManager;
@@ -25,7 +25,7 @@ namespace VoteApp.Server.Service
 
         public void Initialize()
         {
-            if (_db.Database.GetPendingMigrations().Count() > 0)
+            if (_db.Database.GetPendingMigrations().Any())
             {
                 _db.Database.Migrate();
             }

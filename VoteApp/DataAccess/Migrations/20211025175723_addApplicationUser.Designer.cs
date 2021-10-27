@@ -9,7 +9,7 @@ using VoteApp.DataAccess;
 
 namespace VoteApp.DataAccess.Migrations
 {
-    [DbContext(typeof(VoteAppDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20211025175723_addApplicationUser")]
     partial class addApplicationUser
     {

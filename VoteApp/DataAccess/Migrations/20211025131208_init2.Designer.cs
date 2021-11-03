@@ -10,8 +10,8 @@ using VoteApp.DataAccess;
 namespace VoteApp.DataAccess.Migrations
 {
     [DbContext(typeof(VoteAppDbContext))]
-    [Migration("20211024163406_PollTemplateId")]
-    partial class PollTemplateId
+    [Migration("20211025131208_init2")]
+    partial class init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,23 +54,23 @@ namespace VoteApp.DataAccess.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<int>("PollTemplateId")
-                        .HasColumnType("integer");
-
                     b.Property<DateTime>("StartTime")
                         .HasColumnType("timestamp without time zone");
 
                     b.Property<DateTime>("StopTime")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<int?>("VoteCountId")
+                    b.Property<int?>("TemplateId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("VoteCountId1")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PollTemplateId");
+                    b.HasIndex("TemplateId");
 
-                    b.HasIndex("VoteCountId");
+                    b.HasIndex("VoteCountId1");
 
                     b.ToTable("Polls");
                 });
@@ -160,13 +160,11 @@ namespace VoteApp.DataAccess.Migrations
                 {
                     b.HasOne("VoteApp.DataAccess.Entities.PollTemplate", "Template")
                         .WithMany("Polls")
-                        .HasForeignKey("PollTemplateId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("TemplateId");
 
                     b.HasOne("VoteApp.DataAccess.Entities.VoteCount", "VoteCount")
                         .WithMany()
-                        .HasForeignKey("VoteCountId");
+                        .HasForeignKey("VoteCountId1");
 
                     b.Navigation("Template");
 

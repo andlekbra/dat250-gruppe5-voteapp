@@ -10,8 +10,8 @@ using VoteApp.DataAccess;
 namespace VoteApp.DataAccess.Migrations
 {
     [DbContext(typeof(VoteAppDbContext))]
-    [Migration("20211022053958_addDatbase")]
-    partial class addDatbase
+    [Migration("20211025130850_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -63,14 +63,14 @@ namespace VoteApp.DataAccess.Migrations
                     b.Property<int?>("TemplateId")
                         .HasColumnType("integer");
 
-                    b.Property<int?>("VoteCountId")
+                    b.Property<int?>("VoteCountId1")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
                     b.HasIndex("TemplateId");
 
-                    b.HasIndex("VoteCountId");
+                    b.HasIndex("VoteCountId1");
 
                     b.ToTable("Polls");
                 });
@@ -164,7 +164,7 @@ namespace VoteApp.DataAccess.Migrations
 
                     b.HasOne("VoteApp.DataAccess.Entities.VoteCount", "VoteCount")
                         .WithMany()
-                        .HasForeignKey("VoteCountId");
+                        .HasForeignKey("VoteCountId1");
 
                     b.Navigation("Template");
 

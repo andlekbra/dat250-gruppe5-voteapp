@@ -28,11 +28,11 @@ namespace VoteApp.Server.Controllers
 
 		#region Create
 		[HttpPost]
-		public IActionResult Create(Poll Poll)
+		public IActionResult Create(PollDTO Poll)
 		{
 			try
 			{
-				Task<PollTemplateDTO> pollTemplateTask = _repositoryPT.GetPollTemplate(Poll.PollTemplateId);
+				Task<PollTemplateDTO> pollTemplateTask = _repositoryPT.GetPollTemplate(Poll.TemplateId);
 				pollTemplateTask.Wait();
 
 				var addedPoll = _repository.CreatePoll(Poll).Result;
@@ -44,15 +44,15 @@ namespace VoteApp.Server.Controllers
 				{
 					_PHthis = "failed", //_PHthis because "this" is reserved and doesn't seem hide-able in this context
 					with = ex.GetBaseException().GetType().ToString(),
-					because = $"Likely could not find PollTemplate with id:[{Poll.PollTemplateId}]"
+					because = $"Likely could not find PollTemplate with id:[{Poll.TemplateId}]"
 				}).Replace("_PHthis", "this");
-
-
+				Debug.WriteLine("PollControllerCreate");
+				Debug.WriteLine(ex.ToString());
 				return BadRequest(response);
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine("coca:" + ex.GetType());
+
 				Debug.WriteLine(ex.ToString());
 				return BadRequest();
 			}
@@ -61,18 +61,20 @@ namespace VoteApp.Server.Controllers
 
 		#region Read
 		[HttpGet]
-		public ActionResult<IEnumerable<Poll>> GetAll() => _repository.GetAllPolls().Result.ToList();
+		public ActionResult<IEnumerable<PollDTO>> GetAll() => _repository.GetAllPolls().Result.ToList();
 		[HttpGet("{id}")]
-		public ActionResult<Poll> Get(int id) => _repository.GetPoll(id).Result;
+		public ActionResult<PollDTO> Get(int id) => _repository.GetPoll(id).Result;
 		#endregion
 
 		#region Update
-		[HttpPut]
-		public IActionResult Update(Poll updatedPoll)
+		[HttpPut("{id}")]
+		public IActionResult Update(int id, PollDTO updatedPoll)
 		{
+			if(updatedPoll.Id != id) { return BadRequest("Poll id does not match"); }
+
 			try
 			{
-				Task<PollTemplateDTO> pollTemplateTask = _repositoryPT.GetPollTemplate(updatedPoll.PollTemplateId);
+				Task<PollTemplateDTO> pollTemplateTask = _repositoryPT.GetPollTemplate(updatedPoll.TemplateId);
 				pollTemplateTask.Wait();
 
 				var addedPoll = _repository.UpdatePoll(updatedPoll).Result;
@@ -84,15 +86,14 @@ namespace VoteApp.Server.Controllers
 				{
 					_PHthis = "failed", //_PHthis because "this" is reserved and doesn't seem hide-able in this context
 					with = ex.GetBaseException().GetType().ToString(),
-					because = $"Likely could not find PollTemplate with id:[{updatedPoll.PollTemplateId}] or poll with id:{updatedPoll.Id} does not exist"
+					because = $"Likely could not find PollTemplate with id:[{updatedPoll.TemplateId}] or poll with id:{updatedPoll.Id} does not exist"
 				}).Replace("_PHthis", "this");
-
-
+				Debug.WriteLine("PollControllerUpdate");
+				Debug.WriteLine(ex.ToString());
 				return BadRequest(response);
 			}
 			catch (Exception ex)
 			{
-				Debug.WriteLine("coca:" + ex.GetType());
 				Debug.WriteLine(ex.ToString());
 				return BadRequest();
 			}
@@ -100,7 +101,7 @@ namespace VoteApp.Server.Controllers
 		#endregion
 		#region Delete
 		[HttpDelete("{id}")]
-		public ActionResult<Poll> Delete(int id) => _repository.DeletePoll(id).Result;
+		public ActionResult<PollDTO> Delete(int id) => _repository.DeletePoll(id).Result;
 		#endregion
 	}
 }

@@ -13,22 +13,13 @@ namespace VoteApp.DataAccess.Entities
 		public DateTime StopTime { get; set; }
 		public int JoinCode { get; set; }
 		public string Name { get; set; }
-		public int PollTemplateId { get; set; }
-		[ForeignKey("PollTemplateId"), JsonIgnore]
-		public PollTemplate Template { get; set; }
-		[JsonIgnore]
-		public VoteCount VoteCount { get; set; }
-		[JsonIgnore]
-		public ICollection<IoTDevice> IoTDevices { get; set; }
 
-		[JsonInclude]
-		public List<int> IoTDevicesIds
-		{
-			get
-			{
-				return IoTDevices?.Select(device => device.Id).ToList();
-			}
-		}
+		public PollTemplate Template { get; set; }
+
+		public VoteCount VoteCount { get; set; }
+	
+		public ICollection<IoTDevice> IoTDevices { get; set; }
+	
 
 	}
 }

@@ -5,18 +5,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VoteApp.DataAccess.Entities;
+using VoteApp.Shared.Models;
 
 namespace VoteApp.Business.Repository
 {
     
     public interface IPollRepository
     {
-        public Task<Poll> CreatePoll(Poll poll);
+        public Task<PollDTO> CreatePoll(PollDTO poll);
 
-        public Task<Poll> GetPoll(int id);
-        public Task<IEnumerable<Poll>> GetAllPolls();
+        public Task<PollDTO> GetPoll(int id);
+        public Task<IEnumerable<PollDTO>> GetAllPolls();
 
-        public Task<Poll> DeletePoll(int id);
-        public Task<Poll> UpdatePoll(Poll poll);
+        public Task<PollDTO> DeletePoll(int id);
+        public Task<PollDTO> UpdatePoll(PollDTO poll);
     }
 }

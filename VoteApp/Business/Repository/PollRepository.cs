@@ -1,8 +1,6 @@
 using AutoMapper;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using VoteApp.DataAccess;
@@ -16,26 +14,29 @@ namespace VoteApp.Business.Repository
 	{
 
 		private readonly VoteAppDbContext _db;
-		public PollRepository(VoteAppDbContext db)
+		private readonly IMapper _mapper;
+		public PollRepository(VoteAppDbContext db, IMapper mapper)
 		{
 			_db = db;
+			_mapper = mapper;
 		}
 
-		public async Task<Poll> CreatePoll(Poll poll)
+		public async Task<PollDTO> CreatePoll(PollDTO pollDTO)
 		{
+			Poll poll = _mapper.Map<PollDTO, Poll>(pollDTO);
 			var addedPoll = await _db.AddAsync(poll);
 			await _db.SaveChangesAsync();
-			return addedPoll.Entity;
+			return _mapper.Map<Poll, PollDTO>(addedPoll.Entity);
 		}
 
-		public async Task<Poll> DeletePoll(int pollid)
+		public async Task<PollDTO> DeletePoll(int pollid)
 		{
 			try
 			{
 				Poll poll = await _db.Polls.FirstOrDefaultAsync(x => x.Id == pollid);
 				_db.Remove(poll);
 				await _db.SaveChangesAsync();
-				return poll;
+				return _mapper.Map<Poll, PollDTO>(poll);
 			}
 			catch (Exception ex)
 			{
@@ -43,11 +44,11 @@ namespace VoteApp.Business.Repository
 			}
 		}
 
-		public async Task<IEnumerable<Poll>> GetAllPolls()
+		public async Task<IEnumerable<PollDTO>> GetAllPolls()
 		{
 			try
 			{
-				IEnumerable<Poll> polls = _db.Polls;
+				IEnumerable<PollDTO> polls = _mapper.Map<IEnumerable<Poll>, IEnumerable<PollDTO>>(_db.Polls);
 				return polls;
 			}
 			catch (Exception)
@@ -56,12 +57,12 @@ namespace VoteApp.Business.Repository
 			}
 		}
 
-		public async Task<Poll> GetPoll(int pollid)
+		public async Task<PollDTO> GetPoll(int pollid)
 		{
 			try
 			{
-				Poll poll =
-					await _db.Polls.FirstOrDefaultAsync(x => x.Id == pollid);
+				PollDTO poll = _mapper.Map<Poll, PollDTO>(
+					await _db.Polls.FirstOrDefaultAsync(x => x.Id == pollid));
 				return poll;
 			}
 			catch (Exception ex)
@@ -71,7 +72,7 @@ namespace VoteApp.Business.Repository
 			}
 		}
 
-		public async Task<Poll> UpdatePoll(Poll poll)
+		public async Task<PollDTO> UpdatePoll(PollDTO poll)
 		{
 
 			_db.Entry(poll).State = EntityState.Modified;

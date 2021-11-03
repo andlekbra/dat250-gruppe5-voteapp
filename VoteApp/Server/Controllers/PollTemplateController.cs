@@ -29,6 +29,7 @@ namespace VoteApp.Server.Controllers
             {
                 var addedPollTemplate = _repository.CreatePollTemplate(pollTemplateDTO).Result;
                 return CreatedAtAction(nameof(Create), addedPollTemplate);
+                var user = User;
             }
             catch (Exception)
             {

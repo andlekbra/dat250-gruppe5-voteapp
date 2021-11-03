@@ -9,9 +9,9 @@ using VoteApp.DataAccess;
 
 namespace VoteApp.DataAccess.Migrations
 {
-    [DbContext(typeof(VoteAppDbContext))]
-    [Migration("20211102183058_DTO")]
-    partial class DTO
+    [DbContext(typeof(ApplicationDbContext))]
+    [Migration("20211022053958_addDatbase")]
+    partial class addDatbase
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

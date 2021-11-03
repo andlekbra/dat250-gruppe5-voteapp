@@ -13,9 +13,9 @@ namespace VoteApp.Business.Repository
 
     {
 
-        private readonly VoteAppDbContext _db;
+        private readonly ApplicationDbContext _db;
         private readonly IMapper _mapper;
-        public PollTemplateRepository(VoteAppDbContext db, IMapper mapper)
+        public PollTemplateRepository(ApplicationDbContext db, IMapper mapper)
         {
             _db = db;
             _mapper = mapper;

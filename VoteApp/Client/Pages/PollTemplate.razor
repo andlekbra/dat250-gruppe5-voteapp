@@ -1,5 +1,8 @@
 ﻿@page "/polltemplate"
 @using VoteApp.Shared.Models;
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.WebAssembly.Authentication
+@attribute [Authorize]
 @inject HttpClient httpClient;
 
 <h4>Create poll template</h4>
@@ -43,18 +46,30 @@
 <p>@pollTemplateResult?.ToString();</p>
 
 <h4>List all poll templates</h4>
-<p>Area for createing poll templates</p>
 <br />
 <button type="submit" @onclick="@updateList">Update</button>
 <br />
 @if (pollTemplateDTOs != null)
 {
-<table>
-    @foreach (var item in pollTemplateDTOs)
-    {
-    <tr>@item.Title;</tr>
-    }
-</table>
+    <table border="1" width="100%" cellpadding="5">
+        <tr>
+            <th>Title</th>
+            <th>Question</th>
+            <th>RedAnswer</th>
+            <th>GreenAnswer</th>
+        </tr>
+
+        @foreach (var item in pollTemplateDTOs)
+        {
+            <tr>
+                <td>@item.Title;</td>
+                <td>@item.Question;</td>
+                <td>@item.RedAnswer;</td>
+                <td>@item.GreenAnswer;</td>
+            </tr>
+
+        }
+    </table>
 }
 
 
@@ -67,6 +82,7 @@
     private async void onValidSubmit()
     {
         pollTemplateResult = await httpClient.PostAsJsonAsync<PollTemplateDTO>("api/polltemplate", pollTemplateDTO);
+        updateList();
     }
 
     private async void updateList()

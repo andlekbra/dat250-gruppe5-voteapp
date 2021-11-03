@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace VoteApp.DataAccess.Migrations
 {
-    public partial class addDatbase : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -73,7 +73,7 @@ namespace VoteApp.DataAccess.Migrations
                     JoinCode = table.Column<int>(type: "integer", nullable: false),
                     Name = table.Column<string>(type: "text", nullable: true),
                     TemplateId = table.Column<int>(type: "integer", nullable: true),
-                    VoteCountId = table.Column<int>(type: "integer", nullable: true)
+                    VoteCountId1 = table.Column<int>(type: "integer", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -85,8 +85,8 @@ namespace VoteApp.DataAccess.Migrations
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Polls_VoteCounts_VoteCountId",
-                        column: x => x.VoteCountId,
+                        name: "FK_Polls_VoteCounts_VoteCountId1",
+                        column: x => x.VoteCountId1,
                         principalTable: "VoteCounts",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
@@ -123,9 +123,9 @@ namespace VoteApp.DataAccess.Migrations
                 column: "TemplateId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Polls_VoteCountId",
+                name: "IX_Polls_VoteCountId1",
                 table: "Polls",
-                column: "VoteCountId");
+                column: "VoteCountId1");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PollTemplates_CreatorId",

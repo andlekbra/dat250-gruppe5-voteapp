@@ -46,6 +46,7 @@ namespace VoteApp.Server
             services.AddRazorPages();
             services.AddSwaggerGen();
             services.AddScoped<IPollTemplateRepository, PollTemplateRepository>();
+            services.AddScoped<IPollRepository, PollRepository>();
             services.AddScoped<IDbInitializer, DbInitializer>();
         }
 

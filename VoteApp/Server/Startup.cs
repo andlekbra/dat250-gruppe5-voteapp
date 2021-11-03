@@ -29,6 +29,7 @@ namespace VoteApp.Server
             services.AddDbContext<VoteAppDbContext>(options => options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection")));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
             services.AddScoped<IPollTemplateRepository, PollTemplateRepository>();
+            services.AddScoped<IPollRepository, PollRepository>();
             services.AddSwaggerGen();
 
 

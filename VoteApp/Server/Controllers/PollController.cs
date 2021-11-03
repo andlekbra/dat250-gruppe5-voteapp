@@ -9,6 +9,7 @@ using VoteApp.DataAccess.Entities;
 using System.Diagnostics;
 using System.Text.Json;
 using Microsoft.EntityFrameworkCore;
+using VoteApp.Shared;
 
 namespace VoteApp.Server.Controllers
 {
@@ -40,15 +41,9 @@ namespace VoteApp.Server.Controllers
 			}
 			catch (AggregateException ex)
 			{
-				string response = JsonSerializer.Serialize(new
-				{
-					_PHthis = "failed", //_PHthis because "this" is reserved and doesn't seem hide-able in this context
-					with = ex.GetBaseException().GetType().ToString(),
-					because = $"Likely could not find PollTemplate with id:[{Poll.TemplateId}]"
-				}).Replace("_PHthis", "this");
 				Debug.WriteLine("PollControllerCreate");
 				Debug.WriteLine(ex.ToString());
-				return BadRequest(response);
+				return BadRequest(HAPIUtil.Failed(ex, $"Likely could not find PollTemplate with id:[{Poll.TemplateId}]"));
 			}
 			catch (Exception ex)
 			{
@@ -82,15 +77,9 @@ namespace VoteApp.Server.Controllers
 			}
 			catch (AggregateException ex)
 			{
-				string response = JsonSerializer.Serialize(new
-				{
-					_PHthis = "failed", //_PHthis because "this" is reserved and doesn't seem hide-able in this context
-					with = ex.GetBaseException().GetType().ToString(),
-					because = $"Likely could not find PollTemplate with id:[{updatedPoll.TemplateId}] or poll with id:{updatedPoll.Id} does not exist"
-				}).Replace("_PHthis", "this");
 				Debug.WriteLine("PollControllerUpdate");
 				Debug.WriteLine(ex.ToString());
-				return BadRequest(response);
+				return BadRequest(HAPIUtil.Failed(ex, $"Likely could not find PollTemplate with id:[{updatedPoll.TemplateId}] or poll with id:{updatedPoll.Id} does not exist"));
 			}
 			catch (Exception ex)
 			{

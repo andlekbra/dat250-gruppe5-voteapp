@@ -36,13 +36,13 @@ namespace VoteApp.Shared
 			return ErrorString(exception, because);
 		}
 
-		public static string Succeeded(Verb by, string verb, Resource the,object with)
+		public static string Succeeded(Verb by, Resource the,object with)
 		{
 			string response = JsonSerializer.Serialize(new
 			{
 				_PHthis = "succeeded", //_PHthis because "this" is reserved and doesn't seem hide-able in this context
 				by = verbDick.GetValueOrDefault(by, "SomethingWentWrong"),
-				the = resourceDick,
+				the = resourceDick.GetValueOrDefault(the, "SomethingWentWrong"),
 				with = JsonSerializer.Serialize(with)
 			}).Replace("_PHthis", "this");
 

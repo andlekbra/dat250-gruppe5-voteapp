@@ -43,8 +43,6 @@ namespace VoteApp.Server
 
             services.AddAuthentication().AddIdentityServerJwt();
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
-
             //Defaults to require authorization. To change policy endpoints must be annotated with [AllowAnonymous] or other policy [Authorize(PolicyName="MyPolicy")]
             //services.AddAuthorization(options =>
             //{
@@ -54,6 +52,7 @@ namespace VoteApp.Server
             //});
 
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddSwaggerGen();
 
             services.AddControllersWithViews();
             services.AddRazorPages();

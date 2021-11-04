@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mime;
 using System.Threading.Tasks;
 using VoteApp.Business.Repository;
 using VoteApp.Shared;
@@ -25,7 +26,8 @@ namespace VoteApp.Server.Controllers
 
 		#region Create
 		[HttpPost]
-		public IActionResult Create(string Name, string ob)
+		[Consumes(MediaTypeNames.Application.Json)]
+		public IActionResult Create(string Name, [FromBody]string ob)
 		{
 			try
 			{
